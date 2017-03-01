@@ -1,0 +1,333 @@
+
+/* Variaveis: */
+@larguraDesktopGrande: 1200px;  /* gg : giga size */
+@larguraDesktop: 992px;         /* g  : middle */
+@larguraTablet: 768px;          /* mm : middle size */
+@larguraCelGrande: 600px;       /* m  : middle */
+@larguraCelMedio: 460px;        /* ss : middle */
+@larguraCel: 260px;             /* s  : middle */
+
+@telaDesktopGrande: ~"only screen and (min-width: @{larguraDesktopGrande} )";
+@telaDesktop: ~"only screen and (min-width: @{larguraDesktop} )";
+@telaTablet: ~"only screen and (min-width: @{larguraTablet} )";
+@telaCelGrande: ~"only screen and (min-width: @{larguraCelGrande} )";
+@telaCelMedio: ~"only screen and (min-width: @{larguraCelMedio} )";
+@telaCel: ~"only screen and (min-width: @{larguraCel} )";
+
+@onlyDesktopGrande: ~"only screen and (min-width: @{larguraDesktopGrande} )";
+@onlyDesktop: ~"only screen and (min-width: @{larguraDesktop} ) and (max-width: @{larguraDesktopGrande} )";
+@onlyTablet: ~"only screen and (min-width: @{larguraTablet} ) and (max-width: @{larguraDesktop} )";
+@onlyCelGrande: ~"only screen and (min-width: @{larguraCelGrande} ) and (max-width: @{larguraTablet} )";
+@onlyCelMedio: ~"only screen and (min-width: @{larguraCelMedio} ) and (max-width: @{larguraCelGrande} )";
+@onlyCel: ~"only screen and (min-width: @{larguraCel} ) and (max-width: @{larguraCelMedio} )";
+
+@maxDesktopGrande: ~"only screen and (max-width: @{larguraDesktopGrande} )";
+@maxDesktop: ~"only screen and (max-width: @{larguraDesktop} )";
+@maxTablet: ~"only screen and (max-width: @{larguraTablet} )";
+@maxCelGrande: ~"only screen and (max-width: @{larguraCelGrande} )";
+@maxCelMedio: ~"only screen and (max-width: @{larguraCelMedio} )";
+@maxCel: ~"only screen and (max-width: @{larguraCel} )";
+
+
+
+@verdeEscuro: rgb(28, 74, 0);
+@verdeEscuro2: rgb(53, 111, 19);
+@verde: rgb(87, 149, 50);
+@verdeClaro2: rgb(128, 186, 93);
+@verdeClaro: rgb(177, 223, 149);
+@azulEscuro: rgb(25, 6, 58);
+@azulEscuro2: rgb(45, 21, 87);
+@azul: rgb(72, 46, 116);
+@azulClaro2: rgb(103, 79, 145);
+@azulClaro: rgb(141, 121, 174);
+@laranjaEscuro: rgb(85, 56, 0);
+@laranjaEscuro2: rgb(128, 91, 21);
+@laranja: rgb(170, 131, 57);
+@laranjaClaro2: rgb(212, 176, 106);
+@laranjaClaro: rgb(255, 226, 170);
+
+@preto: #000;
+@cinzaEscuro: #444;
+@cinzaMedio: #888;
+@cinzaClaro: #ccc;
+@cinzaClaroMuito: #dfdfdf;
+@branco: #fff;
+
+
+/* Mixins: */
+.clearAfter{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+    zoom:1; /* IE6 hack (??) */
+  }
+}
+.noSelect{
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+  -webkit-user-select: none;
+  cursor: default;
+}
+.corTrans( @cor; @trans; @withTrans ) when (@withTrans = true){
+  .corTrans(@cor; @trans);
+  @nBranco: 255 * (1 - @nA) ;
+  @oR: (@nR - @nBranco) / @nA ;
+  @oG: (@nG - @nBranco) / @nA ;
+  @oB: (@nB - @nBranco) / @nA ;
+  @corTrans: rgba(@oR, @oG, @oB, @nA);
+}
+.corTrans( @cor; @trans ){
+  @R: red(@cor);
+  @G: green(@cor);
+  @B: blue(@cor);
+  @A: alpha(@cor);
+  @nBranco: 255 * (1 - @A) ;
+  @nR: @nBranco + (@R * @A) ;
+  @nG: @nBranco + (@G * @A) ;
+  @nB: @nBranco + (@B * @A) ;
+  @nA: @trans ;
+  @corTrans: rgba(@nR, @nG, @nB, 1);
+}
+  
+  
+
+/* estilos gerais: */
+.container{
+  .clearAfter;
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px 10px;
+  box-sizing: border-box;
+}
+
+
+/* estilos de grade: */
+.col{
+  float: left;
+  display: inline-block;
+  padding: 5px;
+  position: relative;
+  box-sizing: border-box;
+}
+.row{
+  .clearAfter;
+  width: 100%;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.z-loop(@i) when (@i > 0){
+  .z-loop(@i - 1);
+  .z@{i}{
+    box-shadow: 
+      0px (@i * 2px) (@i * 2.5px) 0px rgba(0,0,0,  .15),
+      0px (@i * 1.8px) (@i * 1.5px) (@i * -1.2px) rgba(0,0,0,  .25),
+      0px (@i * 0.4px) (@i * 0.6px) (@i * 0.4px) rgba(0,0,0,  .10) ,
+      0px 2px 1px 0 rgba(255,255,255,  .25) inset;
+  }
+}
+.z0{
+  box-shadow: none !important;
+}
+.z-loop(12);
+
+.x-loop(@x, @i) when (@i > 0){
+  .x-loop(@x, @i - 1);
+  .@{x}@{i}{
+    width: (@i / 12) * 100%;
+  }
+}
+
+/*  ===========   Max   ======================  */
+
+.sh{
+  display: none;
+}
+@media @maxCel{
+  
+}
+@media @maxCelMedio{
+  .ssh{
+    display: none;
+  }
+}
+@media @maxCelGrande{
+  .mh{
+    display: none;
+  }
+}
+@media @maxTablet{
+  .mmh{
+    display: none;
+  }
+}
+@media @maxDesktop{
+  .gh{
+    display: none;
+  }
+}
+@media @maxDesktopGrande{
+  .ggh{
+    display: none;
+  }
+}
+
+/*  ===========   Only   ======================  */
+
+.sh-only{
+  display: none;
+}
+@media @onlyCel{
+  
+}
+@media @onlyCelMedio{
+  .ssh-only{
+    display: none;
+  }
+}
+@media @onlyCelGrande{
+  .mh-only{
+    display: none;
+  }
+}
+@media @onlyTablet{
+  .mmh-only{
+    display: none;
+  }
+}
+@media @onlyDesktop{
+  .gh-only{
+    display: none;
+  }
+}
+@media @onlyDesktopGrande{
+  .ggh-only{
+    display: none;
+  }
+}
+
+
+/*  ===========   Min   ======================  */
+
+.container{
+  width: 100%;
+}
+.x-loop(s, 12);
+.sr{
+  .col{
+    float: right;
+  }
+}
+.sl{
+  .col{
+    float: left;
+  }
+}
+@media @telaCel{
+  
+}
+@media @telaCelMedio{
+  .container{
+    width: @larguraCelMedio;
+  }
+  .x-loop(ss, 12);
+  .ssr{
+    .col{
+      float: right;
+    }
+  }
+  .ssl{
+    .col{
+      float: left;
+    }
+  }
+}
+@media @telaCelGrande{
+  .container{
+    width: @larguraCelGrande;
+  }
+  .x-loop(m, 12);
+  .mr{
+    .col{
+      float: right;
+    }
+  }
+  .ml{
+    .col{
+      float: left;
+    }
+  }
+}
+@media @telaTablet{
+  .container{
+    width: @larguraTablet;
+  }
+  .x-loop(mm, 12);
+  .mmr{
+    .col{
+      float: right;
+    }
+  }
+  .mml{
+    .col{
+      float: left;
+    }
+  }
+}
+@media @telaDesktop{
+  .container{
+    width: @larguraDesktop;
+  }
+  .x-loop(g, 12);
+  .gr{
+    .col{
+      float: right;
+    }
+  }
+  .gl{
+    .col{
+      float: left;
+    }
+  }
+}
+@media @telaDesktopGrande{
+  .container{
+    width: @larguraDesktopGrande;
+  }
+  .x-loop(gg, 12);
+  .ggr{
+    .col{
+      float: right;
+    }
+  }
+  .ggl{
+    .col{
+      float: left;
+    }
+  }
+}
+
+
+/*
+
+@media @telaCel{
+  
+}
+@media @telaCelMedio{
+  
+}
+@media @telaCelGrande{
+  
+}
+@media @telaTablet{
+  
+}
+@media @telaDesktop{
+  
+}
+@media @telaDesktopGrande{
+  
+}
+
+*/
