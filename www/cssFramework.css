@@ -100,31 +100,31 @@
 }
 /*  ===========   Max   ======================  */
 .sh {
-  display: none;
+  display: none !important;
 }
 @media only screen and (max-width: 460px ) {
   .ssh {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (max-width: 600px ) {
   .mh {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (max-width: 768px ) {
   .mmh {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (max-width: 992px ) {
   .gh {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (max-width: 1200px ) {
   .ggh {
-    display: none;
+    display: none !important;
   }
 }
 /*  ===========   Only   ======================  */
@@ -133,27 +133,27 @@
 }
 @media only screen and (min-width: 460px ) and (max-width: 600px ) {
   .ssh-only {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (min-width: 600px ) and (max-width: 768px ) {
   .mh-only {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (min-width: 768px ) and (max-width: 992px ) {
   .mmh-only {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (min-width: 992px ) and (max-width: 1200px ) {
   .gh-only {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (min-width: 1200px ) {
   .ggh-only {
-    display: none;
+    display: none !important;
   }
 }
 /*  ===========   Min   ======================  */
@@ -203,7 +203,7 @@
   float: left;
 }
 .shs {
-  display: none;
+  display: none !important;
 }
 @media only screen and (min-width: 460px ) {
   .container {
@@ -252,7 +252,7 @@
     float: left;
   }
   .sshs {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (min-width: 600px ) {
@@ -302,7 +302,7 @@
     float: left;
   }
   .mhs {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (min-width: 768px ) {
@@ -352,7 +352,7 @@
     float: left;
   }
   .mmhs {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (min-width: 992px ) {
@@ -402,7 +402,7 @@
     float: left;
   }
   .ghs {
-    display: none;
+    display: none !important;
   }
 }
 @media only screen and (min-width: 1200px ) {
@@ -452,7 +452,7 @@
     float: left;
   }
   .gghs {
-    display: none;
+    display: none !important;
   }
 }
 /*
