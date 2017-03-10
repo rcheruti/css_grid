@@ -1,11 +1,18 @@
 
+/*
+
+ MS blur:
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3'); 
+
+*/
+
 /* Variaveis: */
-@larguraDesktopGrande: 1200px;  /* gg : giga size */
-@larguraDesktop: 992px;         /* g  : middle */
-@larguraTablet: 768px;          /* mm : middle size */
-@larguraCelGrande: 600px;       /* m  : middle */
-@larguraCelMedio: 460px;        /* ss : middle */
-@larguraCel: 260px;             /* s  : middle */
+@larguraDesktopGrande: 1200px;  /* gg : large */
+@larguraDesktop: 992px;         /* g  : common size */
+@larguraTablet: 768px;          /* mm : medium */
+@larguraCelGrande: 600px;       /* m  : not so small */
+@larguraCelMedio: 460px;        /* ss : small */
+@larguraCel: 260px;             /* s  : very small */
 
 @telaDesktopGrande: ~"only screen and (min-width: @{larguraDesktopGrande} )";
 @telaDesktop: ~"only screen and (min-width: @{larguraDesktop} )";
@@ -224,6 +231,9 @@
     float: left;
   }
 }
+.shs{
+  display: none;
+}
 @media @telaCel{
   
 }
@@ -242,6 +252,9 @@
       float: left;
     }
   }
+  .sshs{
+    display: none;
+  }
 }
 @media @telaCelGrande{
   .container{
@@ -257,6 +270,9 @@
     .col{
       float: left;
     }
+  }
+  .mhs{
+    display: none;
   }
 }
 @media @telaTablet{
@@ -274,6 +290,9 @@
       float: left;
     }
   }
+  .mmhs{
+    display: none;
+  }
 }
 @media @telaDesktop{
   .container{
@@ -290,6 +309,9 @@
       float: left;
     }
   }
+  .ghs{
+    display: none;
+  }
 }
 @media @telaDesktopGrande{
   .container{
@@ -305,6 +327,9 @@
     .col{
       float: left;
     }
+  }
+  .gghs{
+    display: none;
   }
 }
 

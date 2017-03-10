@@ -1,15 +1,23 @@
+/*
+
+ MS blur:
+  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3'); 
+
+*/
 /* Variaveis: */
-/* gg : giga size */
-/* g  : middle */
-/* mm : middle size */
-/* m  : middle */
-/* ss : middle */
-/* s  : middle */
+/* gg : large */
+/* g  : common size */
+/* mm : medium */
+/* m  : not so small */
+/* ss : small */
+/* s  : very small */
 /* Mixins: */
 .clearAfter:after {
   content: '';
   display: block;
   clear: both;
+  zoom: 1;
+  /* IE6 hack (??) */
 }
 .noSelect {
   /* prevent copy paste, to allow, change 'none' to 'text' */
@@ -27,6 +35,8 @@
   content: '';
   display: block;
   clear: both;
+  zoom: 1;
+  /* IE6 hack (??) */
 }
 /* estilos de grade: */
 .col {
@@ -46,6 +56,8 @@
   content: '';
   display: block;
   clear: both;
+  zoom: 1;
+  /* IE6 hack (??) */
 }
 .z0 {
   box-shadow: none !important;
@@ -190,6 +202,9 @@
 .sl .col {
   float: left;
 }
+.shs {
+  display: none;
+}
 @media only screen and (min-width: 460px ) {
   .container {
     width: 460px;
@@ -235,6 +250,9 @@
   }
   .ssl .col {
     float: left;
+  }
+  .sshs {
+    display: none;
   }
 }
 @media only screen and (min-width: 600px ) {
@@ -283,6 +301,9 @@
   .ml .col {
     float: left;
   }
+  .mhs {
+    display: none;
+  }
 }
 @media only screen and (min-width: 768px ) {
   .container {
@@ -329,6 +350,9 @@
   }
   .mml .col {
     float: left;
+  }
+  .mmhs {
+    display: none;
   }
 }
 @media only screen and (min-width: 992px ) {
@@ -377,6 +401,9 @@
   .gl .col {
     float: left;
   }
+  .ghs {
+    display: none;
+  }
 }
 @media only screen and (min-width: 1200px ) {
   .container {
@@ -423,6 +450,9 @@
   }
   .ggl .col {
     float: left;
+  }
+  .gghs {
+    display: none;
   }
 }
 /*
