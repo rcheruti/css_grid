@@ -4,7 +4,7 @@
   filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3'); 
 
 */
-/* Variaveis: */
+/* Variables: */
 /* gg : large */
 /* g  : common size */
 /* mm : medium */
@@ -24,7 +24,32 @@
   -webkit-user-select: none;
   cursor: default;
 }
-/* estilos gerais: */
+/*
+  !!!!!  Ddont remove this piece of code  !!!!!
+  This will be moved to another framework, with the shadows code too.
+  
+.corTrans( @cor; @trans; @withTrans ) when (@withTrans = true){
+  .corTrans(@cor; @trans);
+  @nBranco: 255 * (1 - @nA) ;
+  @oR: (@nR - @nBranco) / @nA ;
+  @oG: (@nG - @nBranco) / @nA ;
+  @oB: (@nB - @nBranco) / @nA ;
+  @corTrans: rgba(@oR, @oG, @oB, @nA);
+}
+.corTrans( @cor; @trans ){
+  @R: red(@cor);
+  @G: green(@cor);
+  @B: blue(@cor);
+  @A: alpha(@cor);
+  @nBranco: 255 * (1 - @A) ;
+  @nR: @nBranco + (@R * @A) ;
+  @nG: @nBranco + (@G * @A) ;
+  @nB: @nBranco + (@B * @A) ;
+  @nA: @trans ;
+  @corTrans: rgba(@nR, @nG, @nB, 1);
+}
+*/
+/* General styles: */
 .container {
   margin: 0 auto;
   width: 100%;
@@ -38,7 +63,7 @@
   zoom: 1;
   /* IE6 hack (??) */
 }
-/* estilos de grade: */
+/* Grid styles: */
 .col {
   float: left;
   display: inline-block;
@@ -456,23 +481,24 @@
   }
 }
 /*
-
-@media @telaCel{
+  Just to store the template to responsive grid.
+  
+@media @screenCel{
   
 }
-@media @telaCelMedio{
+@media @screenCelMedio{
   
 }
-@media @telaCelGrande{
+@media @screenCelGrande{
   
 }
-@media @telaTablet{
+@media @screenTablet{
   
 }
-@media @telaDesktop{
+@media @screenDesktop{
   
 }
-@media @telaDesktopGrande{
+@media @screenDesktopGrande{
   
 }
 

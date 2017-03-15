@@ -30,6 +30,29 @@
   font-weight:bold
 }
 
+/* General styles: */ 
+
+.listras .col{
+  text-align: center;
+
+  &:nth-of-type(even){
+    background: #efefef;
+  }
+  &:nth-of-type(odd){
+    background: #cfcfcf;
+  }
+}
+p{
+  margin: 0 0 10px;
+}
+
+/* Examples styles: */
+.full12Column{
+  .row{
+    margin: 0 0 10px;
+  }
+}
+
 
 .grade{
   .row{
@@ -39,16 +62,7 @@
       border-bottom: none;
     }
   }
-  .listras .col{
-    text-align: center;
-    
-    &:nth-of-type(even){
-      background: #efefef;
-    }
-    &:nth-of-type(odd){
-      background: #cfcfcf;
-    }
-  }
+  
   .sombras{
     margin: 20px 0 0;
     

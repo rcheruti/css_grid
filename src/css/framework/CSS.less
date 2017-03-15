@@ -6,59 +6,35 @@
 
 */
 
-/* Variaveis: */
-@larguraDesktopGrande: 1200px;  /* gg : large */
-@larguraDesktop: 992px;         /* g  : common size */
-@larguraTablet: 768px;          /* mm : medium */
-@larguraCelGrande: 600px;       /* m  : not so small */
-@larguraCelMedio: 460px;        /* ss : small */
-@larguraCel: 260px;             /* s  : very small */
+/* Variables: */
+@sizeDesktopGrande: 1200px;  /* gg : large */
+@sizeDesktop: 992px;         /* g  : common size */
+@sizeTablet: 768px;          /* mm : medium */
+@sizeCelGrande: 600px;       /* m  : not so small */
+@sizeCelMedio: 460px;        /* ss : small */
+@sizeCel: 260px;             /* s  : very small */
 
-@telaDesktopGrande: ~"only screen and (min-width: @{larguraDesktopGrande} )";
-@telaDesktop: ~"only screen and (min-width: @{larguraDesktop} )";
-@telaTablet: ~"only screen and (min-width: @{larguraTablet} )";
-@telaCelGrande: ~"only screen and (min-width: @{larguraCelGrande} )";
-@telaCelMedio: ~"only screen and (min-width: @{larguraCelMedio} )";
-@telaCel: ~"only screen and (min-width: @{larguraCel} )";
+@screenDesktopGrande: ~"only screen and (min-width: @{sizeDesktopGrande} )";
+@screenDesktop: ~"only screen and (min-width: @{sizeDesktop} )";
+@screenTablet: ~"only screen and (min-width: @{sizeTablet} )";
+@screenCelGrande: ~"only screen and (min-width: @{sizeCelGrande} )";
+@screenCelMedio: ~"only screen and (min-width: @{sizeCelMedio} )";
+@screenCel: ~"only screen and (min-width: @{sizeCel} )";
 
-@onlyDesktopGrande: ~"only screen and (min-width: @{larguraDesktopGrande} )";
-@onlyDesktop: ~"only screen and (min-width: @{larguraDesktop} ) and (max-width: @{larguraDesktopGrande} )";
-@onlyTablet: ~"only screen and (min-width: @{larguraTablet} ) and (max-width: @{larguraDesktop} )";
-@onlyCelGrande: ~"only screen and (min-width: @{larguraCelGrande} ) and (max-width: @{larguraTablet} )";
-@onlyCelMedio: ~"only screen and (min-width: @{larguraCelMedio} ) and (max-width: @{larguraCelGrande} )";
-@onlyCel: ~"only screen and (min-width: @{larguraCel} ) and (max-width: @{larguraCelMedio} )";
+@onlyDesktopGrande: ~"only screen and (min-width: @{sizeDesktopGrande} )";
+@onlyDesktop: ~"only screen and (min-width: @{sizeDesktop} ) and (max-width: @{sizeDesktopGrande} )";
+@onlyTablet: ~"only screen and (min-width: @{sizeTablet} ) and (max-width: @{sizeDesktop} )";
+@onlyCelGrande: ~"only screen and (min-width: @{sizeCelGrande} ) and (max-width: @{sizeTablet} )";
+@onlyCelMedio: ~"only screen and (min-width: @{sizeCelMedio} ) and (max-width: @{sizeCelGrande} )";
+@onlyCel: ~"only screen and (min-width: @{sizeCel} ) and (max-width: @{sizeCelMedio} )";
 
-@maxDesktopGrande: ~"only screen and (max-width: @{larguraDesktopGrande} )";
-@maxDesktop: ~"only screen and (max-width: @{larguraDesktop} )";
-@maxTablet: ~"only screen and (max-width: @{larguraTablet} )";
-@maxCelGrande: ~"only screen and (max-width: @{larguraCelGrande} )";
-@maxCelMedio: ~"only screen and (max-width: @{larguraCelMedio} )";
-@maxCel: ~"only screen and (max-width: @{larguraCel} )";
+@maxDesktopGrande: ~"only screen and (max-width: @{sizeDesktopGrande} )";
+@maxDesktop: ~"only screen and (max-width: @{sizeDesktop} )";
+@maxTablet: ~"only screen and (max-width: @{sizeTablet} )";
+@maxCelGrande: ~"only screen and (max-width: @{sizeCelGrande} )";
+@maxCelMedio: ~"only screen and (max-width: @{sizeCelMedio} )";
+@maxCel: ~"only screen and (max-width: @{sizeCel} )";
 
-
-
-@verdeEscuro: rgb(28, 74, 0);
-@verdeEscuro2: rgb(53, 111, 19);
-@verde: rgb(87, 149, 50);
-@verdeClaro2: rgb(128, 186, 93);
-@verdeClaro: rgb(177, 223, 149);
-@azulEscuro: rgb(25, 6, 58);
-@azulEscuro2: rgb(45, 21, 87);
-@azul: rgb(72, 46, 116);
-@azulClaro2: rgb(103, 79, 145);
-@azulClaro: rgb(141, 121, 174);
-@laranjaEscuro: rgb(85, 56, 0);
-@laranjaEscuro2: rgb(128, 91, 21);
-@laranja: rgb(170, 131, 57);
-@laranjaClaro2: rgb(212, 176, 106);
-@laranjaClaro: rgb(255, 226, 170);
-
-@preto: #000;
-@cinzaEscuro: #444;
-@cinzaMedio: #888;
-@cinzaClaro: #ccc;
-@cinzaClaroMuito: #dfdfdf;
-@branco: #fff;
 
 
 /* Mixins: */
@@ -75,6 +51,11 @@
   -webkit-user-select: none;
   cursor: default;
 }
+
+/*
+  !!!!!  Ddont remove this piece of code  !!!!!
+  This will be moved to another framework, with the shadows code too.
+  
 .corTrans( @cor; @trans; @withTrans ) when (@withTrans = true){
   .corTrans(@cor; @trans);
   @nBranco: 255 * (1 - @nA) ;
@@ -95,10 +76,10 @@
   @nA: @trans ;
   @corTrans: rgba(@nR, @nG, @nB, 1);
 }
-  
+*/
   
 
-/* estilos gerais: */
+/* General styles: */
 .container{
   .clearAfter;
   margin: 0 auto;
@@ -108,7 +89,7 @@
 }
 
 
-/* estilos de grade: */
+/* Grid styles: */
 .col{
   float: left;
   display: inline-block;
@@ -234,12 +215,12 @@
 .shs{
   display: none !important;
 }
-@media @telaCel{
+@media @screenCel{
   
 }
-@media @telaCelMedio{
+@media @screenCelMedio{
   .container{
-    width: @larguraCelMedio;
+    width: @sizeCelMedio;
   }
   .x-loop(ss, 12);
   .ssr{
@@ -256,9 +237,9 @@
     display: none !important;
   }
 }
-@media @telaCelGrande{
+@media @screenCelGrande{
   .container{
-    width: @larguraCelGrande;
+    width: @sizeCelGrande;
   }
   .x-loop(m, 12);
   .mr{
@@ -275,9 +256,9 @@
     display: none !important;
   }
 }
-@media @telaTablet{
+@media @screenTablet{
   .container{
-    width: @larguraTablet;
+    width: @sizeTablet;
   }
   .x-loop(mm, 12);
   .mmr{
@@ -294,9 +275,9 @@
     display: none !important;
   }
 }
-@media @telaDesktop{
+@media @screenDesktop{
   .container{
-    width: @larguraDesktop;
+    width: @sizeDesktop;
   }
   .x-loop(g, 12);
   .gr{
@@ -313,9 +294,9 @@
     display: none !important;
   }
 }
-@media @telaDesktopGrande{
+@media @screenDesktopGrande{
   .container{
-    width: @larguraDesktopGrande;
+    width: @sizeDesktopGrande;
   }
   .x-loop(gg, 12);
   .ggr{
@@ -335,23 +316,24 @@
 
 
 /*
-
-@media @telaCel{
+  Just to store the template to responsive grid.
+  
+@media @screenCel{
   
 }
-@media @telaCelMedio{
+@media @screenCelMedio{
   
 }
-@media @telaCelGrande{
+@media @screenCelGrande{
   
 }
-@media @telaTablet{
+@media @screenTablet{
   
 }
-@media @telaDesktop{
+@media @screenDesktop{
   
 }
-@media @telaDesktopGrande{
+@media @screenDesktopGrande{
   
 }
 

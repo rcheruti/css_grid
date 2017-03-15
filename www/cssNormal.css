@@ -19,20 +19,28 @@
   font-style: normal;
   font-weight: bold;
 }
+/* General styles: */
+.listras .col {
+  text-align: center;
+}
+.listras .col:nth-of-type(even) {
+  background: #efefef;
+}
+.listras .col:nth-of-type(odd) {
+  background: #cfcfcf;
+}
+p {
+  margin: 0 0 10px;
+}
+/* Examples styles: */
+.full12Column .row {
+  margin: 0 0 10px;
+}
 .grade .row {
   border-bottom: 1px solid rgba(0, 0, 255, 0.3);
 }
 .grade .row:last-of-type {
   border-bottom: none;
-}
-.grade .listras .col {
-  text-align: center;
-}
-.grade .listras .col:nth-of-type(even) {
-  background: #efefef;
-}
-.grade .listras .col:nth-of-type(odd) {
-  background: #cfcfcf;
 }
 .grade .sombras {
   margin: 20px 0 0;
