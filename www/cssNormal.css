@@ -20,6 +20,10 @@
   font-weight: bold;
 }
 /* General styles: */
+body {
+  line-height: 1.5em;
+  font-size: 1.2em;
+}
 .listras .col {
   text-align: center;
 }
@@ -30,11 +34,25 @@
   background: #cfcfcf;
 }
 p {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
+}
+.marginTop {
+  margin-top: 60px;
 }
 /* Examples styles: */
 .full12Column .row {
   margin: 0 0 10px;
+}
+.demoContainer {
+  margin-bottom: 10px;
+  border: orangered;
+  background: orange;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+}
+.grade {
+  margin: 60px 0 0;
 }
 .grade .row {
   border-bottom: 1px solid rgba(0, 0, 255, 0.3);

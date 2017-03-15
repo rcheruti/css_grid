@@ -63,6 +63,24 @@
   zoom: 1;
   /* IE6 hack (??) */
 }
+.container.maxs {
+  max-width: 260px;
+}
+.container.maxss {
+  max-width: 460px;
+}
+.container.maxm {
+  max-width: 600px;
+}
+.container.maxmm {
+  max-width: 768px;
+}
+.container.maxg {
+  max-width: 992px;
+}
+.container.maxgg {
+  max-width: 1200px;
+}
 /* Grid styles: */
 .col {
   float: left;
@@ -486,19 +504,19 @@
 @media @screenCel{
   
 }
-@media @screenCelMedio{
-  
-}
-@media @screenCelGrande{
+@media @screenCelBig{
   
 }
 @media @screenTablet{
   
 }
+@media @screenTabletBig{
+  
+}
 @media @screenDesktop{
   
 }
-@media @screenDesktopGrande{
+@media @screenDesktopBig{
   
 }
 

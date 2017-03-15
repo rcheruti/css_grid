@@ -6,10 +6,9 @@ module.exports = function (grunt) {
   // caminhos do processo de montagem:
   var p = {
     dist:'www/',
-    distIdiomas:'www/idiomas',
+    distCode:'dist/',
     
     src:'src/',
-    srcIdiomas:'src/idiomas/',
     srcFontes:'src/fontes/',
     
     srcCssC:'src/css/critico/',
@@ -21,15 +20,10 @@ module.exports = function (grunt) {
     srcJsP:'src/js/framework/',
     
     htmlPaginas:'src/paginas/',
-    htmlLightbox:'src/paginas/lightbox/',
     htmlIndex:'src/index.html',
     
-    serv:'C:/wamp/www-RuiSite1/',
     temp:'temp/',
-    test:'test/',
-    docs:'docs/',
-    priv:'privado/',
-    privLibs:'vendor/'
+    test:'test/'
   };
   
   grunt.registerTask('cleanDist',[
@@ -42,18 +36,13 @@ module.exports = function (grunt) {
     'concat:cssCritico','concat:cssNormal','concat:cssFramework',
     'postcss',
     'cssmin','uglify',
-    'copy:arquivos','copy:imagens','copy:fontes','copy:idiomas',
+    'copy:arquivos','copy:imagens','copy:fontes','copy:distCode',
     'replace:temp','replace:dist'
-  ]);
-  grunt.registerTask('copyServ',[
-    
   ]);
   grunt.registerTask('fullDist',[
     'cleanDist',
     'dist'
   ]);
-  
-  
   grunt.registerTask('default',[
     'cleanDist','dist'
   ]);
@@ -84,13 +73,6 @@ module.exports = function (grunt) {
       },
       dist:{
         src: [ p.dist + '**/*' ]
-      },
-      servidor:{
-        src: [ p.serv + '*/**', '!'+p.serv + p.privLibs+'**' ],
-        //filter: 'isFile'
-      },
-      servidor_libs:{
-        src: [ p.serv + '**/*' ]
       }
     },
     // ----------------  juntando os arquivos]
@@ -109,7 +91,7 @@ module.exports = function (grunt) {
           p.srcCssP+ 'libs/**.less', 
           p.srcCssP+ '**/*.less' 
         ],
-        dest: p.temp+'lessFramework.less'
+        dest: p.temp+'lessJags.less'
       },
       lessNormal:{
         src:[ 
@@ -129,13 +111,8 @@ module.exports = function (grunt) {
       },
       jsNormal:{
         src:[ 
-          p.srcJsN+ 'libs/velocity-min.js',
-          p.srcJsN+ 'libs/velocity*.js',
-          p.srcJsN+ 'libs/ScrollMagic.min.js',
           p.srcJsN+ 'libs/zepto-1.2.0.min.js',
           p.srcJsP+ 'libs/zepto*.js',
-          p.srcJsP+ 'libs/vue.min.js',
-          p.srcJsP+ 'libs/vue*.js',
           p.srcJsN+ 'libs/*.js',
           p.srcJsN+ 'index.js',
           p.srcJsN+ '**/*.js' 
@@ -146,13 +123,10 @@ module.exports = function (grunt) {
         src:[ 
           p.srcJsP+ 'libs/zepto-1.2.0.min.js',
           p.srcJsP+ 'libs/zepto*.js',
-          p.srcJsP+ 'libs/vue.min.js',
-          p.srcJsP+ 'libs/vue*.js',
-          p.srcJsP+ 'rotas.js',
           p.srcJsP+ 'index.js',
           p.srcJsP+ '**/*.js' 
         ],
-        dest: p.temp+'jsFramework.js'
+        dest: p.temp+'jsJags.js'
       },
       
         //---  Juntar CSS depois da complação do LESS
@@ -173,9 +147,9 @@ module.exports = function (grunt) {
       cssFramework:{
         src:[
           p.srcCssP+'**/*.css',
-          p.temp+'lessFramework.css'
+          p.temp+'lessJags.css'
         ],
-        dest: p.temp+'cssFramework.css'
+        dest: p.temp+'cssJags.css'
       }
     },
     //-------------  interpretando LESS
@@ -194,8 +168,8 @@ module.exports = function (grunt) {
       },
       cssFramework:{
         files:[{
-          src:[ p.temp+'lessFramework.less' ],
-          dest: p.temp+'lessFramework.css'
+          src:[ p.temp+'lessJags.less' ],
+          dest: p.temp+'lessJags.css'
         }]
       }
     },
@@ -204,14 +178,14 @@ module.exports = function (grunt) {
       options: {
         map: false,
         processors: [
-          require('autoprefixer')({browsers: 'last 2 versions'})
+          require('autoprefixer')({browsers: 'last 5 versions'})
         ]
       },
       dist: {
         src: [
           p.temp+'cssCritico.css',
           p.temp+'cssNormal.css',
-          p.temp+'cssFramework.css'
+          p.temp+'cssJags.css'
         ]
       }
     },
@@ -235,8 +209,8 @@ module.exports = function (grunt) {
       },
       cssFramework:{
         files:[{
-          src: p.temp+'cssFramework.css' ,
-          dest: p.temp+'cssFramework.min.css'
+          src: p.temp+'cssJags.css' ,
+          dest: p.temp+'cssJags.min.css'
         }]
       }
     },
@@ -255,8 +229,8 @@ module.exports = function (grunt) {
       },
       jsFramework:{
         files:[{
-          src: p.temp+'jsFramework.js' ,
-          dest: p.temp+'jsFramework.min.js'
+          src: p.temp+'jsJags.js' ,
+          dest: p.temp+'jsJags.min.js'
         }]
       }
     },
@@ -271,12 +245,6 @@ module.exports = function (grunt) {
         files:[{
           src: p.temp+'htmlPaginas.html' ,
           dest: p.temp+'htmlPaginas.min.html'
-        },{
-          src: p.temp+'htmlLightbox.html' ,
-          dest: p.temp+'htmlLightbox.min.html'
-        },{
-          src: p.temp+'htmlPaginasModal.html' ,
-          dest: p.temp+'htmlPaginasModal.min.html'
         }]
       }
     },
@@ -300,8 +268,8 @@ module.exports = function (grunt) {
             'jsNormal.min.js', 
             'cssNormal.css',
             'cssNormal.min.css',
-            'cssFramework.css',
-            'cssFramework.min.css'
+            'cssJags.css',
+            'cssJags.min.css'
           ],
           dest: p.dist
         }]
@@ -322,13 +290,16 @@ module.exports = function (grunt) {
           dest: p.dist
         }]
       },
-      
-      servidor:{
+      distCode:{
         files:[{
           expand: true,
-          cwd: p.dist ,
-          src:[ '**/*', '.htaccess' ],
-          dest: p.serv
+          cwd: p.temp ,
+          src:[ 
+            'lessJags.less',
+            'cssJags.css',
+            'cssJags.min.css'
+          ],
+          dest: p.distCode
         }]
       }
     },
@@ -359,7 +330,7 @@ module.exports = function (grunt) {
         files:[{
           expand:true,
           flatten:true,
-          src: [ p.src+ '*.html', p.priv+ '*.html' ],
+          src: [ p.src+ '*.html' ],
           dest: p.temp 
         }]
       },
