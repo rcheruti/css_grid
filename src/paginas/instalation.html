@@ -1,0 +1,38 @@
+<section class="instalation">
+  
+  <div class="container maxg">
+    <hr />
+    <div class="title">
+      Instalation
+    </div>
+    
+    <p>
+      At the moment your only option is to download the GitHub repo and get the
+      code inside the <strong>dist</strong> folder.
+    </p>
+    <p>
+      If you want a final version of the code only, you can use one of the CSS
+      files available on the <strong>dist</strong> folder. One is the compressed
+      version, and the other an uncompressed version.
+    </p>
+    <p>
+      If you want to change some of the screens sizes you will need to use the LESS
+      version on the <strong>dist</strong> folder (the truth is that it 
+      is the source file itself). <br/>
+      In this case you will need a LESS compiler and a Autoprefixer to generate a
+      CSS file with prefix for older browsers. <br/>
+      You can take a look on the <strong>Gruntfile</strong> that is used to compile 
+      this project to see how these can be configured. <br/>
+      <br/>
+      With grunt is used: <br/>
+      <strong>grunt-contrib-less:</strong> to compile LESS code. <br/>
+      <strong>grunt-postcss:</strong> as a Post compile CSS engine. Alone this do nothing. <br/>
+      <strong>autoprefixer:</strong> as the prefixer for CSS, as a plugin to "postcss" <br/>
+      <br/>
+      All these can be found on <strong>package.json</strong> file and downloaded 
+      from <strong>npm</strong>.
+    </p>
+    
+  </div>
+  
+</section>

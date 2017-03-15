@@ -1,5 +1,159 @@
 <section class="api">
   
-  
+  <div class="container maxg">
+    <hr />
+    <div class="title">
+      API
+    </div>
+    
+    <p>
+      Below is the list of classes available on the framework: 
+    </p>
+    
+    <table class="api">
+      <tbody>
+        <tr>
+          <td>.clearAfter</td>
+          <td>
+            This is a LESS mixin that has an <i>:after</i> pseudo-element that
+            will clear both floating behaviors (left and right).
+          </td>
+        </tr>
+        <tr>
+          <td>.noSelect</td>
+          <td>
+            This class will set cursor of the element to the default cursor, 
+            also will prevent copy and paste on <i>-webkit-</i> engine. <br/>
+            With this class aplied on an element, the content of the element is
+            not selectable.
+          </td>
+        </tr>
+        <tr>
+          <td>.container</td>
+          <td>
+            This class has a responsive behavior, is intent to be used as a box
+            for your content. <br/>
+            <br/>
+            Can be combined with <i>.max#</i> classes
+          </td>
+        </tr>
+        <tr>
+          <td>.row</td>
+          <td>
+            This class is the container for the columns of the grid. <br/>
+            The columns will float, this class has the <i>.clearAfter</i> behavior,
+            so will clear the floating on an <i>:after</i> pseudo-element.<br/>
+            <br/>
+            Can be combined with <i>.#l</i> and <i>.#r</i> to change the floating
+            side.
+          </td>
+        </tr>
+        <tr>
+          <td>.col</td>
+          <td>
+            This class need to be added for each element inside a <i>.row</i>
+            container, this class has the floating behavior. <br/>
+            <br/>
+            Columns itself doesn't have any width set on them, so you will need
+            to use at least one of the size classes for a column with it.
+          </td>
+        </tr>
+        <tr>
+          <td>.#h</td>
+          <td>
+            This class is used to hide some element based on the screen size, using
+            a <i>max-width</i> strategy on the <i>media query</i>. <br/>
+            <br/>
+            The "hidden" classes haven an <i>!important</i> annotation on them.
+          </td>
+        </tr>
+        <tr>
+          <td>.#h-only</td>
+          <td>
+            This class is used to hide some element based on the screen size, using
+            a <i>max-width</i> and <i>min-width</i> strategy on 
+            the <i>media query</i>.<br/>
+            So that only on one of the screens sizes, of the 6 screens sizes available, 
+            that element will be hidden.<br/>
+            <br/>
+            More than one of this class can be added, to target more than only one
+            screen size.<br/>
+            Also, that class can be used with the others hidden classes.<br/>
+            <br/>
+            The "hidden" classes haven an <i>!important</i> annotation on them.
+          </td>
+        </tr>
+        <tr>
+          <td>.#hs</td>
+          <td>
+            This class is used to hide some element based on the screen size, using
+            a <i>min-width</i> strategy on the <i>media query</i>.<br/>
+            The name is from <i>hidden on small</i> screens.<br/>
+            <br/>
+            The "hidden" classes haven an <i>!important</i> annotation on them.
+          </td>
+        </tr>
+        <tr>
+          <td>.#1 ~ .#12</td>
+          <td>
+            These are the classes that will set the width of the column. Need to
+            be used with the <i>.col</i> class. <br/>
+            <br/>
+            You can use the numbers <i>1</i> to <i>12</i> to set the size based on the
+            12 column grid system. <br/>
+            So, if you write <i>.#1</i> that will be a <i>1/12</i> column size. <br/>
+            If you write <i>.#6</i> that will be a <i>6/12</i> (50% of row) column size. <br/>
+            And so on.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p>
+      The <strong>#</strong> symbol on the table above means one of the 6 screens
+      sizes names. These names are:
+    </p>
+    <table class="api">
+      <tbody>
+        <tr>
+          <td>s</td>
+          <td>
+            <i>Small phones</i>
+          </td>
+        </tr>
+        <tr>
+          <td>ss</td>
+          <td>
+            <i>Big phones</i>
+          </td>
+        </tr>
+        <tr>
+          <td>m</td>
+          <td>
+            <i>Tablet (portrait)</i>
+          </td>
+        </tr>
+        <tr>
+          <td>mm</td>
+          <td>
+            <i>Tablet (landscape)</i>
+          </td>
+        </tr>
+        <tr>
+          <td>g</td>
+          <td>
+            <i>Desktop</i>
+          </td>
+        </tr>
+        <tr>
+          <td>gg</td>
+          <td>
+            <i>Big desktop</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
   
 </section>

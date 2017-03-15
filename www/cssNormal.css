@@ -39,6 +39,37 @@ p {
 .marginTop {
   margin-top: 60px;
 }
+hr {
+  height: 3px;
+  width: 100%;
+  background: #ccc;
+  margin: 70px 0 0;
+}
+.title {
+  color: #ccc;
+  font-size: 2em;
+  margin: 0 0 60px;
+  padding: 10px 0;
+}
+table.api {
+  margin: 0 0 40px;
+}
+table.api thead tr td {
+  background: transparent !important;
+}
+table.api tr:nth-of-type(odd) td {
+  background: #efefef;
+}
+table.api tr:nth-of-type(even) td {
+  background: #cfcfcf;
+}
+table.api tr td {
+  padding: 10px 15px;
+}
+table.api i {
+  padding: 0 4px;
+  font-weight: bold;
+}
 /* Examples styles: */
 .full12Column .row {
   margin: 0 0 10px;
