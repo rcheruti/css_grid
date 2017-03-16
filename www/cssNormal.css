@@ -28,10 +28,10 @@ body {
   text-align: center;
 }
 .listras .col:nth-of-type(even) {
-  background: #efefef;
+  background: #9fabef;
 }
 .listras .col:nth-of-type(odd) {
-  background: #cfcfcf;
+  background: #d9e6ff;
 }
 p {
   margin: 0 0 20px;
@@ -61,7 +61,7 @@ table.api tr:nth-of-type(odd) td {
   background: #efefef;
 }
 table.api tr:nth-of-type(even) td {
-  background: #cfcfcf;
+  background: #e0e0e0;
 }
 table.api tr td {
   padding: 10px 15px;
@@ -69,6 +69,69 @@ table.api tr td {
 table.api i {
   padding: 0 4px;
   font-weight: bold;
+}
+/* Menu styles: */
+#menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: 60px;
+  z-index: 1000;
+}
+#menu nav {
+  height: 100%;
+}
+#menu .superior {
+  border-left: none;
+  border-top: none;
+  background: #fff;
+  border-radius: 0 0 4px 0;
+  padding: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+#menu .menuPanel {
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+  background: #777;
+  color: #fff;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 80px 10px 20px;
+}
+#menu .menuPanel.active {
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+}
+#menu .menuPanel li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+#menu .menuBtn {
+  border: 1px solid #777;
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+  width: 38px;
+}
+#menu .menuBtn .linha {
+  height: 2px;
+  width: 20px;
+  background: #999;
+}
+#menu .menuBtn .linha + .linha {
+  margin-top: 4px;
 }
 /* Examples styles: */
 .full12Column .row {
