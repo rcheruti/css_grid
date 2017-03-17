@@ -30,6 +30,15 @@
   font-weight:bold
 }
 
+
+
+
+@laranja: #ed8721;
+@azul: #63bbf7;
+
+
+
+
 /* General styles: */ 
 body{
   line-height: 1.5em;
@@ -172,6 +181,25 @@ table.api{
 
 
 /* Examples styles: */
+.introduction{
+  .logo{
+    text-align: center;
+    padding: 60px 0;
+      
+    img{
+      width: 200px;
+    }
+  }
+  .links{
+    & > * {
+      margin-right: 80px;
+      
+      &:last-of-type{
+        margin-right: 0;
+      }
+    }
+  }
+}
 .full12Column{
   .row{
     margin: 0 0 10px;

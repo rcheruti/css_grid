@@ -134,6 +134,19 @@ table.api i {
   margin-top: 4px;
 }
 /* Examples styles: */
+.introduction .logo {
+  text-align: center;
+  padding: 60px 0;
+}
+.introduction .logo img {
+  width: 200px;
+}
+.introduction .links > * {
+  margin-right: 80px;
+}
+.introduction .links > *:last-of-type {
+  margin-right: 0;
+}
 .full12Column .row {
   margin: 0 0 10px;
 }
