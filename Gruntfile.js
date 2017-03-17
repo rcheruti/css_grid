@@ -5,7 +5,7 @@ module.exports = function (grunt) {
   
   // caminhos do processo de montagem:
   var p = {
-    dist:'www/',
+    dist:'docs/',
     distCode:'dist/',
     
     src:'src/',
